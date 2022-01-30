@@ -1,10 +1,15 @@
-from email.policy import default
 from django.db import models
-from django.forms import DateTimeField
+from django.utils import timezone
+from django.contrib.auth.models import User
 
 class Task(models.Model):
 
-    def __init__(self):
-        super().__init__()
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.CharField(max_length=60, editable=True)
+    description = models.TextField(max_length=500, editable=True)
+    start_date = models.DateField(editable=True)
+    deadline = models.DateField(editable=True)
+    creation_datetime =  models.DateTimeField(default=timezone.now)
 
-        self.creation_datetime =  DateTimeField()
+    def __str__(self) -> str:
+        return self.title
