@@ -1,4 +1,17 @@
+html {
+  font-size: 62.5%;
+}
+
+*, .container, .container-fluid, .row, .col {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background-color: #F5F5F5;
+}
+
 p {
-  font-size: 16.5rem;
+  font-size: 1.6rem;
 }
 /*# sourceMappingURL=styles.css.map */
