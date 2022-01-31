@@ -3,16 +3,33 @@ from django.http import HttpResponse
 
 def register(request):
 
-    return HttpResponse("<h1>Register</h1>")
+    context = {
+        'title' : 'Register'
+    }
+
+    return render(request, "tasks/register.html", context=context)
 
 def login(request):
 
-    return HttpResponse("<h1>login</h1>")
+    context = {
+        'title' : 'Login'
+    }
+
+    return render(request, "tasks/login.html", context=context)
 
 def home(request):
+
+    context = {
+        'title' : 'Home'
+    }
     
-    return HttpResponse("<h1>Home</h1>")
+    return render(request, "tasks/home.html", context=context)
+
 
 def task(request):
 
-    return HttpResponse("<h1>Task</h1>")
+    context = {
+        'title' : 'Task'
+    }
+
+    return render(request, "tasks/task.html", context=context)

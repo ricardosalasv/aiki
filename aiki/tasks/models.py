@@ -7,6 +7,7 @@ class Task(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=60, editable=True)
     description = models.TextField(max_length=500, editable=True)
+    # status = models.
     start_date = models.DateField(editable=True)
     deadline = models.DateField(editable=True)
     creation_datetime =  models.DateTimeField(default=timezone.now)
