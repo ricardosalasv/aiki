@@ -1,0 +1,20 @@
+{% extends "tasks/base.html" %}
+
+{% block content_layout %}
+
+{% if title == "Register" or title == "Login" %}
+    <div class="row">
+        <div class="col">
+{% else %}
+    <div class="col">
+{% endif %}
+
+{% block content %}{% endblock content %}
+
+{% if title == "Register" or title == "Login" %}
+        </div>
+    </div>
+{% else %}
+    </div>
+{% endif %}
+{% endblock content_layout %}
