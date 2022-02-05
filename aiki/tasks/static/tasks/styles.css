@@ -1,17 +1,14 @@
-html {
-  font-size: 62.5%;
-}
-
-*, .container, .container-fluid, .row, .col {
-  padding: 0px;
-  margin: 0px;
-}
-
 body {
   background-color: #F5F5F5;
 }
 
-p {
-  font-size: 1.6rem;
+.btn-outline-info {
+  color: #3E5C76;
+  border-color: #3E5C76;
+}
+
+.btn-outline-info:hover {
+  background: #3E5C76;
+  border-color: #3E5C76;
 }
 /*# sourceMappingURL=styles.css.map */
