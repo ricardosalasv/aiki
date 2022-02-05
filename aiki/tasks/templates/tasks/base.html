@@ -24,8 +24,30 @@
     </head>
     <body>
         <div class="container-fluid">
-            {% block navbar %}{% endblock navbar %}
-            {% block content %}{% endblock content %}
+            <div class="row">
+                {% if title == "Register" or title == "Login" %}
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                {% include "tasks/navbar.html" %}
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="col-2">
+                        {% include "tasks/sidebar.html" %}
+                    </div>
+                {% endif %}
+                
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                {% block content_layout %}{% endblock content_layout %}
+            </div>
         </div>
     </body>
 </html>
