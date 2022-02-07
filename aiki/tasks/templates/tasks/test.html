@@ -25,25 +25,24 @@
     <body>
         <div class="container-fluid">
             <div class="row">
-                {% if title == "Register" or title == "Login" or title == "Logout" %}
-                    <div class="col">
-                        <div class="row">
-                            {% include "tasks/navbar.html" %}
+                <div class="col-auto sidebar">
+                    <div class="row">
+                        <div class="col-12">
+                            <img class="m-4 sidebar_logo" src="../../static/tasks/logo_aiki.svg" alt="logo_aiki">
+                        </div>
+            
+                        <div class="col-12">
+                            <ul class="sidebar-menu">
+                                <li><a href="">Home</a></li>
+                            </ul>
                         </div>
                     </div>
-                {% else %}
-                    {% include "tasks/sidebar.html" %}
-                {% endif %}
-                
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="alert alert-{{ message.tags }}">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                {% endif %}
-                {% block content_layout %}{% endblock content_layout %}
+                </div>
+                <div class="col">
+    
+                </div>
             </div>
         </div>
+
     </body>
 </html>

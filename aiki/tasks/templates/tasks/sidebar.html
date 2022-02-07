@@ -1,3 +1,18 @@
-<div class="row">
-    <h1>Sidebar</h1>
+<div class="col-2 sidebar">
+    <div class="row">
+        <div class="col">
+            <img class="m-4 sidebar_logo" src="../../static/tasks/logo_aiki.svg" alt="logo_aiki">
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col">
+            <ul class="sidebar-menu">
+                <li><a href="">Home</a></li>
+            </ul>
+            <ul class="sidebar-menu">
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </div>
+    </div>
 </div>
