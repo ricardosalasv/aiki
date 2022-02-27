@@ -46,6 +46,10 @@ a {
   color: #748CAB;
 }
 
+.react-TaskContainer {
+  width: 100%;
+}
+
 .sidebar {
   height: 100vh;
   margin: 0;
@@ -85,5 +89,10 @@ a {
 
 .svg_logo_aiki {
   fill: black;
+}
+
+.task-list {
+  padding-left: 2%;
+  padding-right: 2%;
 }
 /*# sourceMappingURL=styles.css.map */
