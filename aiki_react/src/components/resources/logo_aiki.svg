@@ -1,0 +1,29 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 326.51 192">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #748CAB;
+      }
+
+      .cls-2 {
+        fill: #F5F5F5;
+      }
+
+      .cls-3 {
+        fill: #F5F5F5;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" x="0.5" y="0.5" width="167" height="47" />
+  <path class="cls-2" d="M326,136v46H160V136H326m1-1H159v48H327V135Z" transform="translate(-159 -135)" />
+  <rect class="cls-1" x="42.5" y="48.5" width="167" height="47" />
+  <path class="cls-2" d="M368,184v46H202V184H368m1-1H201v48H369V183Z" transform="translate(-159 -135)" />
+  <rect class="cls-1" x="86.5" y="96.5" width="167" height="47" />
+  <path class="cls-2" d="M412,232v46H246V232H412m1-1H245v48H413V231Z" transform="translate(-159 -135)" />
+  <rect class="cls-1" x="126.5" y="144.5" width="167" height="47" />
+  <path class="cls-2" d="M452,280v46H286V280H452m1-1H285v48H453V279Z" transform="translate(-159 -135)" />
+  <path class="cls-3" d="M333.45,175.76l10.41-36.06h7.36l10.41,36.06H356.3l-8.53-31.69h-.46l-8.53,31.69Zm4.82-8.79v-4.82h18.28V167Z" transform="translate(-159 -135)" />
+  <path class="cls-3" d="M383.57,194.53V189.7h21.94v4.83Zm0,31.23v-4.83h21.94v4.83Zm8.4,0V189.7h5.08v36.06Z" transform="translate(-159 -135)" />
+  <path class="cls-3" d="M423.11,272.76V236.7h5.08v36.06Zm3.2-11.48.46-5a13.28,13.28,0,0,0,6.75-1.63,14,14,0,0,0,4.69-4.42,20.88,20.88,0,0,0,2.74-6.27,28.88,28.88,0,0,0,.9-7.23h5.23a30.16,30.16,0,0,1-1.4,9.22,25.17,25.17,0,0,1-4.06,7.88,19.57,19.57,0,0,1-6.52,5.48A18.91,18.91,0,0,1,426.31,261.28Zm16.35,11.48-9.14-17.57,4.57-2.59,10.72,20.16Z" transform="translate(-159 -135)" />
+  <path class="cls-3" d="M463.57,291.53V286.7h21.94v4.83Zm0,31.23v-4.83h21.94v4.83Zm8.4,0V286.7h5.08v36.06Z" transform="translate(-159 -135)" />
+</svg>
