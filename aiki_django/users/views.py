@@ -1,33 +1,34 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
-from .forms import UserRegisterForm
-from django.contrib import messages
+from django.shortcuts import render
 
+from rest_framework import status
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
+from .models import *
+from .serializers import *
+
+@api_view(['POST'])
 def register(request):
 
     if request.method == "POST":
-        form = UserRegisterForm(request.POST)
 
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            messages.success(request, f'Your account has been created! You are now able to log in!')
+        register_serializer = RegisterUserSerializer(data=request.data)
 
-            return redirect('login')
-    else:
-        form = UserRegisterForm()
+        if register_serializer.is_valid():
+            print(f"------------------{register_serializer.errors}-------------------------")
 
-    context = {
-        'title' : 'Register',
-        'form' : form,
-    }
+            new_user = register_serializer.save()
 
-    return render(request, "users/register.html", context=context)
+            if new_user:
+                return Response(status=status.HTTP_201_CREATED)
 
+            return Response(register_serializer.errors, status.HTTP_400_BAD_REQUEST)
+
+@api_view(['POST'])
 def login(request):
 
     context = {
         'title' : 'Login'
     }
 
-    return render(request, "users/login.html", context=context)
+    return render(request, "users/login.html")

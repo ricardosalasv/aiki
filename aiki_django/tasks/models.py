@@ -1,14 +1,17 @@
 from django.db import models
 from django.utils import timezone
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 
 class Status(models.Model):
 
     name = models.CharField(max_length=60, editable=True)
 
+    def __str__(self):
+        return self.name
+
 class Task(models.Model):
 
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     status = models.ForeignKey(Status, on_delete=models.SET_NULL, null=True, default=list(filter(lambda x : x.name == "To Do", Status.objects.all()))[0].pk)
 
     title = models.CharField(max_length=60, editable=True)

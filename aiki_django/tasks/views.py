@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
+from rest_framework.decorators import permission_classes
+from rest_framework.permissions import SAFE_METHODS, BasePermission, IsAdminUser, IsAuthenticated, IsAuthenticatedOrReadOnly
 
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -10,28 +12,46 @@ from .serializers import *
 
 # API Views
 @api_view(['GET'])
+@permission_classes([IsAuthenticatedOrReadOnly])
 def taskList(request):
 
-    tasks = Task.objects.all()
+    tasks = Task.objects.filter(author=request.user.id)
     serializer = TaskSerializer(tasks, many=True)
     
     return Response(serializer.data)
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def taskCreate(request):
     serializer = TaskSerializer(data=request.data, many=True)
-
-    if serializer.is_valid():
-        serializer.save()
     
+    is_validated = True
+    for task in request.data:
+        print(f"-=-=-=-=-=-=-={task['author']} --- {request.user.id}=-=-=-=-=-=-=-=")
+        if task['author'] != request.user.id:
+            is_validated = False
+
+    if is_validated:
+        if serializer.is_valid():
+            serializer.save()
+        else:
+            return Response("An error occurred with the serializer,\
+                 please check that all the fields in your request are correct")
+    else:
+        return Response("You cannot create a task with the ID of another user")
+
     return Response(serializer.data)
 
-@api_view(['POST', 'PATCH'])
+@api_view(['PATCH'])
+@permission_classes([IsAuthenticated])
 def taskUpdate(request, pk):
 
     task = Task.objects.get(id=pk)
 
     serializer = TaskSerializer(instance=task, data=request.data, many=False, partial=True)
+    
+    if task.author.id != request.user.id:
+        return Response("You cannot update a task that belongs to another user")
 
     if serializer.is_valid():
         serializer.save()
@@ -39,9 +59,14 @@ def taskUpdate(request, pk):
     return Response(serializer.data)
 
 @api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
 def taskDelete(request, pk):
 
     task = Task.objects.get(id=pk)
-    task.delete()
+    if task.author.id == request.user.id:
+        task.delete()
+    else:
+        return Response(f'You can only delete a resource you own')
+        
     
     return Response(f'Item ID: {pk} succesfully deleted!')
