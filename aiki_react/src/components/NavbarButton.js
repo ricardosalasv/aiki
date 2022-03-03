@@ -1,6 +1,6 @@
 import React from 'react';
 
-class NavbarButton extends React.Component {
+const NavbarButton = () => {
 
 }
 

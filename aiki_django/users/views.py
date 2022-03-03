@@ -15,8 +15,7 @@ def register(request):
         register_serializer = RegisterUserSerializer(data=request.data)
 
         if register_serializer.is_valid():
-            print(f"------------------{register_serializer.errors}-------------------------")
-
+            
             new_user = register_serializer.save()
 
             if new_user:
@@ -27,8 +26,5 @@ def register(request):
 @api_view(['POST'])
 def login(request):
 
-    context = {
-        'title' : 'Login'
-    }
 
-    return render(request, "users/login.html")
+    return Response("To implement")

@@ -1,8 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 
-class Login extends React.Component {
-  render(){
+const Login = () => {
 
     return(
       <div>
@@ -12,7 +11,7 @@ class Login extends React.Component {
         </div>
       </div>
     )
-  }
+
 }
 
 export default Login;

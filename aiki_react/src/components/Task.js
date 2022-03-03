@@ -1,17 +1,12 @@
 import React, { Component } from "react";
 import ReactDOM from 'react-dom';
 
-class Task extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
+const Task = () => {
 
-    render() {
-        return (
-          <div>Hello!</div>
-        );
-    }
+    return (
+        <div>Hello!</div>
+    );
+
 }
 
 export default Task;

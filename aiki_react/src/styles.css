@@ -11,6 +11,7 @@ a {
   color: #F5F5F5;
   background: #3E5C76;
   border-color: #3E5C76;
+  border-radius: 25px;
 }
 
 .btn-outline-info:hover {

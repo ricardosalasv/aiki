@@ -1,8 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 
-class Home extends React.Component {
-  render(){
+const Home = () => {
 
     return(
         <div>
@@ -12,7 +11,7 @@ class Home extends React.Component {
             </div>
         </div>
     )
-  }
+
 }
 
 export default Home;

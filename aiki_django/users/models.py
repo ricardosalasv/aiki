@@ -21,7 +21,6 @@ class AikiAccountManager(BaseUserManager):
     def create_superuser(self, email, user_name, first_name, password, **other_fields):
         other_fields.setdefault('is_staff', True)
         other_fields.setdefault('is_superuser', True)
-        other_fields.setdefault('is_active', True)
 
         if other_fields.get('is_staff') is not True:
             raise ValueError(
@@ -44,7 +43,7 @@ class AikiUser(AbstractBaseUser, PermissionsMixin):
     about = models.TextField(gettext_lazy('about'), max_length=500, blank=True)
 
     is_staff = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
 
     objects = AikiAccountManager()
 

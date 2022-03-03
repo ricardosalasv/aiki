@@ -1,25 +1,18 @@
 import React, { Component } from "react";
 import ReactDOM from 'react-dom';
 
-class ControlButton extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
+const ControlButton = ({name}) => {
+
+    function onClickAction() {
+        console.log(name)
     }
 
-    onClickAction() {
-        console.log(this.props.name)
-    }
-
-    render() {
-        
-
-        return (
-          <button onClick={this.onClickAction}>
-              {this.props.name}
-          </button>
-        );
-    }
+    return (
+        <button onClick={this.onClickAction}>
+            {name}
+        </button>
+    );
+    
 }
 
 export default ControlButton;

@@ -1,18 +1,16 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
+import RegisterForm from '../components/forms/RegisterForm';
 
-class Login extends React.Component {
-  render(){
+const Register = () => {
 
     return(
         <div>
             <Navbar />
-            <div className='row'>
-            Register
-            </div>
+            <RegisterForm  />
         </div>
     )
-  }
+
 }
 
-export default Login;
+export default Register;
