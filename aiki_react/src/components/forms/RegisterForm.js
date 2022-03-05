@@ -29,10 +29,7 @@ const RegisterForm = () => {
                 password: payload.password
             })
             .then ((response) => {
-                console.log(1);
                 navigate('/login');
-                console.log(response);
-                console.log(response.data)
             })
             .catch((error) => {
                 console.log(error);
@@ -47,7 +44,7 @@ const RegisterForm = () => {
 
     return (
         <div className="row justify-content-center mt-4">
-            <div className='col-6'>
+            <div className='col-4'>
                 <fieldset>
                     <legend className='border-bottom mb-4'>Start managing your tasks today!</legend>
                     <form onSubmit={submit}>

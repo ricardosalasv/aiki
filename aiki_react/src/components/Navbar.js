@@ -1,10 +1,35 @@
 import React from 'react';
-import NavbarButton from './NavbarButton';
 import { Routes, Route, Link } from 'react-router-dom';
+import Logout from './Logout';
 import logo from './resources/logo_aiki.svg'
 import menu_img from './resources/menu.svg'
 
 const Navbar = () => {
+
+    let navbarOptions = null;
+
+    if (localStorage.getItem('userIsAuthenticated') === "true") {
+        navbarOptions = (
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li className="nav-item">
+                    <Logout />
+                </li>
+            </ul>
+        )
+        
+    }
+    else {
+        navbarOptions = (
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li className="nav-item">
+                    <Link to="/login" className="nav-link active" aria-current="page">Login</Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/register" className="nav-link leftBorder">Register</Link>
+                </li>
+            </ul>
+        )
+    };
 
     return(
         <div className='row'>
@@ -21,14 +46,7 @@ const Navbar = () => {
                 </button>
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li className="nav-item">
-                            <Link to="/login" className="nav-link active" aria-current="page">Login</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to="/register" className="nav-link leftBorder">Register</Link>
-                        </li>
-                    </ul>
+                    {navbarOptions}
                 </div>
             </div>
         </div>

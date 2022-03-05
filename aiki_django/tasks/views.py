@@ -1,10 +1,9 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
-from rest_framework.decorators import permission_classes
+from rest_framework.decorators import permission_classes, api_view
 from rest_framework.permissions import SAFE_METHODS, BasePermission, IsAdminUser, IsAuthenticated, IsAuthenticatedOrReadOnly
 
-from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from .models import *
