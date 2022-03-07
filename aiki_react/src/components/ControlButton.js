@@ -8,9 +8,11 @@ const ControlButton = ({name}) => {
     }
 
     return (
-        <button onClick={this.onClickAction}>
-            {name}
-        </button>
+        <div className="col react-control-button">
+            <button onClick={onClickAction}>
+                {name}
+            </button>
+        </div>
     );
     
 }

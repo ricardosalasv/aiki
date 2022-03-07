@@ -1,29 +1,21 @@
 import React, { Component } from "react";
-import ReactDOM from 'react-dom';
-import Task from './Task';
-import ControlButton from "./ControlButton";
+import TaskList from './TaskList';
+import ControlButtonContainer from "./ControlButtonContainer";
 
 const TaskContainer = () => {
 
   return (
-    <h1>Hello world!</h1>
-    // <div className="react-TaskContainer">
-    //   <div className="row p-2">
-    //     <div className="col">
-    //       <ControlButton name="New Task" />
-    //     </div>
-    //     <div className="col">
-    //       <ControlButton name="Sort By:" />
-    //     </div>
-    //   </div>
-
-    //   <div className="row task-list">
-        
-    //   </div>
-    // </div>
+    <div className="row react-taskList-container">
+      <div className="col">
+        <ControlButtonContainer />
+        <div className="row pt-4"><hr /></div>
+        <TaskList />
+        <div className="row pt-4"><hr /></div>
+        <TaskList type="completed" />
+      </div>
+    </div>
   );
 
 }
 
-const DOMContainer = document.querySelector('#task_list_container');
-ReactDOM.render(<TaskContainer />, DOMContainer);
+export default TaskContainer;

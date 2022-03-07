@@ -1,5 +1,6 @@
 import {React, useEffect} from 'react';
-import Navbar from '../components/Navbar';
+import Sidebar from '../components/Sidebar';
+import TaskContainer from '../components/TaskContainer';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
@@ -12,14 +13,19 @@ const Home = () => {
         }
     })
 
-    return(
-        <div>
-            <Navbar />
-            <div className='row'>
-            HOME
+    if (localStorage.userIsAuthenticated === 'false'){
+        return null;
+    }
+    else{
+        return(
+            <div className='row p-0 m-0'>
+                <Sidebar />
+                <div className='col content'>
+                    <TaskContainer />
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 
 }
 

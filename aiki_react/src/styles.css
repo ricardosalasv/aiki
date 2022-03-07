@@ -23,6 +23,41 @@ a {
 .content {
   overflow-y: auto;
   height: 100vh;
+  padding: 1% 2% 1% 2%;
+}
+
+.react-control-button button {
+  border: none;
+  border-radius: 8px;
+  background-color: #748CAB;
+  color: #F5F5F5;
+  font-weight: 500;
+  width: 100%;
+  padding: 6px;
+  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.react-control-button button:hover {
+  background-color: #3E5C76;
+}
+
+.react-control-button button:hover:active {
+  -webkit-transform: scale(0.9, 0.9);
+          transform: scale(0.9, 0.9);
+}
+
+.react-taskList-division {
+  background-color: #d6d6d6;
+  padding: 15px;
+  border-radius: 15px;
+  z-index: 0;
+}
+
+.react-taskList-inner-division {
+  background-color: #bbbbbb;
+  padding: 15px;
+  border-radius: 15px;
 }
 
 .navbar {
@@ -47,8 +82,82 @@ a {
   color: #748CAB;
 }
 
-.react-TaskContainer {
+.react-Task {
   width: 100%;
+  background-color: #d6d6d6;
+  border-radius: 15px;
+  margin: 0;
+  margin-top: 10px;
+  padding: 5px;
+  -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.react-Task p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+}
+
+.react-Task:hover {
+  background-color: #cecece;
+}
+
+.react-TaskButton {
+  border: none;
+  background-color: #00000000;
+}
+
+.react-TaskButton:hover {
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+}
+
+.react-TaskButton:hover:active {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
+.react-TaskButton img {
+  height: 50px;
+}
+
+.react-TaskStatus {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: #bbbbbb;
+  border-radius: 15px;
+  margin-right: 1%;
+  padding: 2px;
+}
+
+.react-TaskStatus:hover {
+  background-color: #aeaeae;
+}
+
+.react-TaskStatus:hover:active {
+  background-color: #bbbbbb;
+}
+
+.react-TaskDueDate {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: #bbbbbb;
+  border-radius: 15px;
+  padding: 2px;
+}
+
+.react-TaskDueDate:hover {
+  background-color: #aeaeae;
+}
+
+.react-TaskDueDate:hover:active {
+  background-color: #bbbbbb;
 }
 
 .sidebar {
@@ -58,6 +167,7 @@ a {
   background-color: #1D2D44;
   -webkit-box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.5);
           box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .sidebar hr {
@@ -75,7 +185,7 @@ a {
   padding: 0;
 }
 
-.sidebar-menu li a {
+.sidebar-menu .sidebar_button {
   display: block;
   padding: 0% 0% 0% 5%;
   color: #F5F5F5;
@@ -84,7 +194,7 @@ a {
   text-decoration: none;
 }
 
-.sidebar-menu li a:hover {
+.sidebar-menu .sidebar_button:hover {
   background-color: #748CAB;
 }
 

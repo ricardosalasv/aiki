@@ -1,10 +1,28 @@
 import React, { Component } from "react";
-import ReactDOM from 'react-dom';
+import TaskButton from "./TaskButton";
+import TaskDueDate from "./TaskDueDate";
+import TaskStatus from "./TaskStatus";
 
-const Task = () => {
+const Task = (data) => {
 
     return (
-        <div>Hello!</div>
+        <div className="row react-Task align-items-center">
+            <div key={data.name} className="col-1">
+                <TaskButton name="check" />
+            </div>
+            <div key={data.name} className="col-2">
+                <p>{data.name}</p>
+            </div>
+            <div key={data.name} className="col">
+                <TaskStatus />
+            </div>
+            <div key={data.name} className="col">
+                <TaskDueDate />
+            </div>
+            <div key={data.name} className="col-1">
+                <TaskButton name="delete" />
+            </div>
+        </div>
     );
 
 }

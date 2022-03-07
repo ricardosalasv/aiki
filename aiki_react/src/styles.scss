@@ -4,10 +4,8 @@ $blue-02: #1D2D44;
 $blue-03: #3E5C76;
 $blue-04: #748CAB;
 $white-01: #F5F5F5;
-
-// html {
-//     font-size: 62.5%;
-// }
+$gray-01: #d6d6d6;
+$gray-02: #bbbbbb;
 
 body {
     background-color: $white-01;
@@ -34,6 +32,53 @@ a {
 .content {
     overflow-y: auto;
     height: 100vh;
+
+    padding: 1% 2% 1% 2%;
+}
+
+.react-control-button {
+
+    button {
+        border: none;
+        border-radius: 8px;
+        background-color: $blue-04;
+
+        color: $white-01;
+        font-weight: 500;
+
+        width: 100%;
+
+        padding: 6px;
+
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+
+        &:hover {
+            background-color: $blue-03;
+
+            &:active {
+                transform: scale(0.9, 0.9)
+            }
+        }
+    }
+    
+}
+
+.react-taskList-division {
+
+    background-color: $gray-01;
+    padding: 15px;
+
+    border-radius: 15px;
+
+    z-index: 0;
+}
+
+.react-taskList-inner-division {
+
+    background-color: $gray-02;
+    padding: 15px;
+
+    border-radius: 15px;
 }
 
 .navbar {
@@ -59,16 +104,89 @@ a {
 }
 
 .react-Task {
-    
+    width: 100%;
+
+    background-color: $gray-01;
+
+    border-radius: 15px;
+
+    margin: 0;
+    margin-top: 10px;
+
+    padding: 5px;
+
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+
+    p {
+        font-size: 1.2rem;
+        font-weight: 600;
+
+        padding: 0;
+        margin: 0;
+    }
+
+    &:hover {
+        background-color: darken($gray-01, 3);
+    }
 }
 
 .react-TaskButton {
+    border: none;
+    background-color: #00000000;
 
+    &:hover{
+        transform: scale(1.2, 1.2);
+
+        &:active {
+            transform: scale(1, 1);
+        }
+    }
+
+    img {
+        height: 50px;
+    }
+}
+
+.react-TaskStatus {
+
+    user-select: none;
+
+    background-color: $gray-02;
+    border-radius: 15px;
+
+    margin-right: 1%;
+    padding: 2px;
+
+    &:hover {
+        background-color: darken($gray-02, 5);
+
+        &:active {
+            background-color: $gray-02;
+        }
+    }
+    
+ 
+}
+
+.react-TaskDueDate {
+
+    user-select: none;
+    
+    background-color: $gray-02;
+    border-radius: 15px;
+
+    padding: 2px;
+
+    &:hover {
+        background-color: darken($gray-02, 5);
+
+        &:active {
+            background-color: $gray-02;
+        }
+    }
 }
 
 .react-TaskContainer {
-
-    width: 100%;
 
 }
 
@@ -85,6 +203,8 @@ a {
     background-color: $blue-02;
 
     box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.5);
+
+    z-index: 1;
 
     hr {
         color: $white-01;
@@ -103,19 +223,17 @@ a {
     margin: 0;
     padding: 0;
     
-    li {
-        a {
-            display: block;
-            padding: 0% 0% 0% 5%;
-            color: $white-01;
-            font-size: 1.5rem;
-            font-weight: 500;
-            
-            text-decoration: none;
+    .sidebar_button {
+        display: block;
+        padding: 0% 0% 0% 5%;
+        color: $white-01;
+        font-size: 1.5rem;
+        font-weight: 500;
+        
+        text-decoration: none;
 
-            &:hover {
-                background-color: $blue-04;
-            }
+        &:hover {
+            background-color: $blue-04;
         }
     }
 }
@@ -128,7 +246,3 @@ a {
     padding-left: 2%;
     padding-right: 2%;
 }
-
-// p {
-//     font-size: 1.6rem;
-// }

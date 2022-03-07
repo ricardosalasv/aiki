@@ -11,9 +11,10 @@ from .serializers import *
 
 # API Views
 @api_view(['GET'])
-@permission_classes([IsAuthenticatedOrReadOnly])
+@permission_classes([IsAuthenticated])
 def taskList(request):
 
+    print(request)
     tasks = Task.objects.filter(author=request.user.id)
     serializer = TaskSerializer(tasks, many=True)
     
@@ -26,7 +27,7 @@ def taskCreate(request):
     
     is_validated = True
     for task in request.data:
-        print(f"-=-=-=-=-=-=-={task['author']} --- {request.user.id}=-=-=-=-=-=-=-=")
+
         if task['author'] != request.user.id:
             is_validated = False
 
