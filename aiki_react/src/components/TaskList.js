@@ -1,24 +1,24 @@
-import React, { Component, useState } from "react";
+import React, { Component, useEffect, useState } from "react";
 import ReactDOM from 'react-dom';
+import axiosInstance from "../axios";
 import Task from './Task';
 
-const TaskList = ({type}) => {
+const TaskList = ({type, receivedTasks}) => {
 
-  const [tasks, setTasks] = useState(null);
-
-  let data = null;
-
-  let names = ["Task1", "Task2", "Task3", "Task4", "Task5", "Task6"]
-
-  if (type === "completed") {
-    // Filter the tasks which have a Completed status
-  }
+  const [tasks, setTasks] = useState(receivedTasks);
+  
+  useEffect(() => {setTasks(receivedTasks)}, [receivedTasks])
 
   return (
     <div className="row task-list p-0">
       <div className="col p-0">
-          
-        {names.map(x => <Task key={x} name={x} />)}
+
+        {type === "completed" ? <h3>Completed Tasks</h3> : null}
+        {tasks !== null ? tasks.map(x => <Task key={x.title + x.start_date} 
+                          title={x.title} 
+                          status={x.status} 
+                          start_date={x.start_date}
+                          due_date={x.deadline}  />) : null }
 
       </div>
     </div>

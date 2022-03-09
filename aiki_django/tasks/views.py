@@ -1,10 +1,13 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
-from rest_framework.decorators import permission_classes, api_view
+from rest_framework.decorators import permission_classes, api_view, authentication_classes
 from rest_framework.permissions import SAFE_METHODS, BasePermission, IsAdminUser, IsAuthenticated, IsAuthenticatedOrReadOnly
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 
 from rest_framework.response import Response
+
+from users.models import AikiUser
 
 from .models import *
 from .serializers import *
@@ -14,8 +17,7 @@ from .serializers import *
 @permission_classes([IsAuthenticated])
 def taskList(request):
 
-    print(request)
-    tasks = Task.objects.filter(author=request.user.id)
+    tasks = Task.objects.filter(author=request.user)
     serializer = TaskSerializer(tasks, many=True)
     
     return Response(serializer.data)
@@ -70,3 +72,13 @@ def taskDelete(request, pk):
         
     
     return Response(f'Item ID: {pk} succesfully deleted!')
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def getStatus(request):
+
+    status = Status.objects.all()
+
+    serializer = StatusSerializer(status, many=True)
+    
+    return Response(serializer.data)

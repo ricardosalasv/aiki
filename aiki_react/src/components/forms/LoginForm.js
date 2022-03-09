@@ -38,6 +38,7 @@ const LoginForm = () => {
                 localStorage.setItem('userIsAuthenticated', false);
 
                 if (error.response){
+                    console.log("ERROR");
                     console.log(error.response.data);
                     console.log(error.response.status);
                     console.log(error.response.header);

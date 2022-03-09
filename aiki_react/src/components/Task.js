@@ -5,21 +5,25 @@ import TaskStatus from "./TaskStatus";
 
 const Task = (data) => {
 
+    // Retrieving the name of the status assigned to the current task
+    let status = JSON.parse(localStorage.getItem("statusDefinitions") || [])
+        .filter(x => x.id == data.status)[0].name
+
     return (
-        <div className="row react-Task align-items-center">
-            <div key={data.name} className="col-1">
-                <TaskButton name="check" />
+        <div className="row react-Task align-items-center justify-content-around">
+            <div className="col-1">
+                <TaskButton name="check" status={status} />
             </div>
-            <div key={data.name} className="col-2">
-                <p>{data.name}</p>
+            <div className="col-2">
+                <p>{data.title}</p>
             </div>
-            <div key={data.name} className="col">
-                <TaskStatus />
+            <div className="col">
+                <TaskStatus status={status} />
             </div>
-            <div key={data.name} className="col">
-                <TaskDueDate />
+            <div className="col">
+                <TaskDueDate date={data.due_date} />
             </div>
-            <div key={data.name} className="col-1">
+            <div className="col-1">
                 <TaskButton name="delete" />
             </div>
         </div>
