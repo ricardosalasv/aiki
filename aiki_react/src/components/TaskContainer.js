@@ -1,29 +1,28 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useSelector } from 'react-redux';
 import TaskList from './TaskList';
 import ControlButtonContainer from "./ControlButtonContainer";
-import axiosInstance from "../axios";
-import axios from "axios";
 import updateTaskList from '../api/updateTaskList';
 
 const TaskContainer = () => {
 
-  const [listState, setListState] = useState({
-    pendingTasks: null,
-    completedTasks: null
-  })
-
+  // Populate the task list on the initial render
   useEffect(() => {
-    updateTaskList(setListState)
+    updateTaskList()
   }, [])
+
+  // Accessing the tasks in the Redux Store
+  const stateTasks = useSelector(state => state.tasks)
+  console.log(stateTasks)
 
   return (
     <div className="row react-taskList-container">
       <div className="col">
         <ControlButtonContainer />
         <div className="row pt-4"><hr /></div>
-        <TaskList receivedTasks={listState.pendingTasks}/>
+        {stateTasks.pending? <TaskList receivedTasks={stateTasks.pending}/> : null}
         <div className="row pt-4"><hr /></div>
-        <TaskList type="completed" receivedTasks={listState.completedTasks}/>
+        {stateTasks.completed ? <TaskList type="completed" receivedTasks={stateTasks.completed}/> : null}
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ const ControlButtonContainer = () => {
   return (
     <div className="row react-taskList-division justify-content-between align-items-center">
         <ControlButton name="New Task" />
-        <ControlButtonInnerContainer name="Sort By:" />
+        <ControlButtonInnerContainer name="Sort By" />
     </div>
   );
 

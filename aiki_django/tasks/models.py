@@ -15,10 +15,9 @@ class Task(models.Model):
     status = models.ForeignKey(Status, on_delete=models.SET_NULL, null=True, default=list(filter(lambda x : x.name == "To Do", Status.objects.all()))[0].pk)
 
     title = models.CharField(max_length=60, editable=True)
-    description = models.TextField(max_length=500, editable=True)
-    start_date = models.DateField(editable=True)
+    description = models.TextField(max_length=500, editable=True, blank=True)
     deadline = models.DateField(editable=True)
     creation_datetime =  models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return self.title
+        return f"{self.pk}, {self.title}, {self.status.name}"

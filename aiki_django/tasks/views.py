@@ -29,6 +29,7 @@ def taskCreate(request):
     
     is_validated = True
     for task in request.data:
+        task['author'] = request.user.id
 
         if task['author'] != request.user.id:
             is_validated = False
