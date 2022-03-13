@@ -10,14 +10,29 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
 
-  web:
-    build: .
+  django:
+    build: "./aiki_django"
 
     ports: 
       - "8000:8000"
 
     volumes:
-      - "./aiki/:/project/"
+      - "./aiki_django/:/aiki_django/"
 
     depends_on:
       - db
+
+  # react:
+  #   build: "./aiki_react"
+
+  #   environment:
+  #     CHOKIDAR_USEPOLLING: "true"
+
+  #   ports:
+  #     - "3000:3000"
+
+  #   volumes:
+  #     - "./aiki_react/:/app/"
+
+  #   depends_on:
+  #     - django
