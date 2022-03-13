@@ -1,0 +1,20 @@
+{% extends "tasks/base.html" %}
+
+{% block content_layout %}
+
+{% if not user.is_authenticated %}
+    <div class="row">
+        <div class="col pt-4">
+{% else %}
+    <div class="col content">
+{% endif %}
+
+{% block content %}{% endblock content %}
+
+{% if not user.is_authenticated %}
+        </div>
+    </div>
+{% else %}
+    </div>
+{% endif %}
+{% endblock content_layout %}

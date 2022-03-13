@@ -1,0 +1,303 @@
+// Variables
+$blue-01: #0D1321;
+$blue-02: #1D2D44;
+$blue-03: #3E5C76;
+$blue-04: #748CAB;
+$white-01: #F5F5F5;
+$gray-01: #d6d6d6;
+$gray-02: #bbbbbb;
+
+body {
+    background-color: $white-01;
+    overflow: hidden;
+}
+
+a {
+    color: $blue-03;
+}
+
+.btn-outline-info {
+    color: $white-01;
+    background: $blue-03;
+    border-color: $blue-03;
+    border-radius: 25px;
+
+    &:hover{
+        color: $white-01;
+        background: $blue-02;
+        border-color: $blue-02;
+    }
+}
+
+.content {
+    overflow-y: auto;
+    height: 100vh;
+
+    padding: 1% 2% 1% 2%;
+}
+
+.react-control-button {
+
+    button {
+        border: none;
+        border-radius: 8px;
+        background-color: $blue-04;
+
+        color: $white-01;
+        font-weight: 500;
+
+        width: 100%;
+
+        padding: 6px;
+
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+
+        &:hover {
+            background-color: $blue-03;
+
+            &:active {
+                transform: scale(0.9, 0.9)
+            }
+        }
+    }
+    
+}
+
+.react-taskList-division {
+
+    background-color: $gray-01;
+    padding: 15px;
+
+    border-radius: 15px;
+
+    z-index: 0;
+}
+
+.navbar {
+    background-color: $blue-02;
+    color: $white-01;
+    
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.nav-item {
+    padding: 0px 20px 0px 20px;
+    a {
+        color: $white-01;
+        font-size: 1.5rem;
+        font-weight: 600;
+        
+        text-align: end;
+        
+        &:hover {
+            color: $blue-04;
+        }
+    }
+}
+
+.react-taskList-inner-division {
+
+    background-color: $gray-02;
+    padding: 15px;
+
+    border-radius: 15px;
+}
+
+.react-Task {
+    width: 100%;
+
+    background-color: $gray-01;
+
+    border-radius: 15px;
+
+    margin: 0;
+    margin-top: 10px;
+
+    padding: 5px;
+
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+
+    p {
+        font-size: 1.2rem;
+        font-weight: 600;
+
+        padding: 0;
+        margin: 0;
+    }
+
+    &:hover {
+        background-color: darken($gray-01, 3);
+    }
+}
+
+.react-TaskButton {
+    border: none;
+    background-color: #00000000;
+
+    &:hover{
+        transform: scale(1.2, 1.2);
+
+        &:active {
+            transform: scale(1, 1);
+        }
+    }
+
+    img {
+        height: 50px;
+    }
+}
+
+.react-TaskCreateForm {
+    background-color: $gray-02;
+
+    position: absolute;
+    width: 60%;
+    margin-left: 0px;
+
+    border: $gray-01 solid;
+    border-width: 8px;
+    border-radius: 40px;
+
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+
+    z-index: 5;
+
+    label {
+        margin-right: 15px;
+    }
+
+    input {
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        padding-left: 10px;
+
+        height: 30px;
+        width: 80%;
+    }
+
+    input[type="button"] {
+        background-color: $blue-04;
+
+        color: $white-01;
+        font-weight: 600;
+
+        &:hover {
+            background-color: $blue-03;
+
+            &:active {
+                transform: scale(0.9, 0.9)
+            }
+        }
+    }
+
+}
+
+.hidden-element {
+    visibility: hidden;
+}
+
+.react-TaskStatus {
+
+    user-select: none;
+
+    background-color: $gray-02;
+    border-radius: 15px;
+
+    margin-right: 1%;
+    padding: 2px;
+
+    &:hover {
+        background-color: darken($gray-02, 5);
+
+        &:active {
+            background-color: $gray-02;
+        }
+    }
+    
+ 
+}
+
+.react-TaskDueDate {
+
+    user-select: none;
+    
+    background-color: $gray-02;
+    border-radius: 15px;
+
+    padding: 2px;
+
+    &:hover {
+        background-color: darken($gray-02, 5);
+
+        &:active {
+            background-color: $gray-02;
+        }
+    }
+
+    input[type="date"] {
+        border: none;
+        border-radius: 15px;
+
+        height: 30px;
+        padding: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+.sidebar {
+    height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: $blue-02;
+
+    box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.5);
+
+    z-index: 1;
+
+    hr {
+        color: $white-01;
+
+        margin: 5px;
+    }
+}
+
+.sidebar_logo {
+    height: 4rem;
+}
+
+.sidebar-menu {
+    list-style-type: none;
+
+    margin: 0;
+    padding: 0;
+    
+    .sidebar_button {
+        display: block;
+        padding: 0% 0% 0% 5%;
+        color: $white-01;
+        font-size: 1.5rem;
+        font-weight: 500;
+        
+        text-decoration: none;
+
+        &:hover {
+            background-color: $blue-04;
+        }
+    }
+}
+
+.svg_logo_aiki {
+    fill: black;
+}
+
+.task-list {
+    padding-left: 2%;
+    padding-right: 2%;
+}

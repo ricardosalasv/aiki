@@ -1,0 +1,133 @@
+// Variables
+$blue-01: #0D1321;
+$blue-02: #1D2D44;
+$blue-03: #3E5C76;
+$blue-04: #748CAB;
+$white-01: #F5F5F5;
+
+// html {
+//     font-size: 62.5%;
+// }
+
+body {
+    background-color: $white-01;
+    overflow: hidden;
+}
+
+a {
+    color: $blue-03;
+}
+
+.btn-outline-info {
+    color: $white-01;
+    background: $blue-03;
+    border-color: $blue-03;
+
+    &:hover{
+        color: $white-01;
+        background: $blue-02;
+        border-color: $blue-02;
+    }
+}
+
+.content {
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.navbar {
+    background-color: $blue-02;
+    color: $white-01;
+
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.nav-item {
+    padding: 0px 20px 0px 20px;
+    a {
+        color: $white-01;
+        font-size: 1.5rem;
+        font-weight: 600;
+
+        text-align: end;
+
+        &:hover {
+            color: $blue-04;
+        }
+    }
+}
+
+.react-Task {
+    
+}
+
+.react-TaskButton {
+
+}
+
+.react-TaskContainer {
+
+    width: 100%;
+
+}
+
+.react-ControlButton {
+
+}
+
+.sidebar {
+    height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: $blue-02;
+
+    box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.5);
+
+    hr {
+        color: $white-01;
+
+        margin: 5px;
+    }
+}
+
+.sidebar_logo {
+    height: 4rem;
+}
+
+.sidebar-menu {
+    list-style-type: none;
+
+    margin: 0;
+    padding: 0;
+    
+    li {
+        a {
+            display: block;
+            padding: 0% 0% 0% 5%;
+            color: $white-01;
+            font-size: 1.5rem;
+            font-weight: 500;
+            
+            text-decoration: none;
+
+            &:hover {
+                background-color: $blue-04;
+            }
+        }
+    }
+}
+
+.svg_logo_aiki {
+    fill: black;
+}
+
+.task-list {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+// p {
+//     font-size: 1.6rem;
+// }
